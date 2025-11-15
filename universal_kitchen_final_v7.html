@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3498db">
+    <meta name="description" content="تطبيق استشارة وتصميم مطابخ خشبية مجاني من Universal Kitchen">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Universal Kitchen">
+    <link rel="apple-touch-icon" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/QjZMIKnpAWrxRImf.png">
+    <title>🏠 باكيج الاستشارة والتصميم الأولي - Universal Kitchen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: white;
+            padding: 30px 20px;
+            border-bottom: 3px solid #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            flex-shrink: 0;
+            margin-right: 30px;
+        }
+
+        .logo-container img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .header-content {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin: 0;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1em;
+            color: #7f8c8d;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .header-content {
+                text-align: center;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 0.9em;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .step {
+            background: white;
+            border: 2px solid #3498db;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+        }
+
+        .step-number {
+            background: #3498db;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .step h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .step p {
+            color: #7f8c8d;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .benefit {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 10px;
+            border-right: 4px solid #27ae60;
+        }
+
+        .benefit strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .timeline {
+            background: #fff3cd;
+            border-right: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            gap: 15px;
+        }
+
+        .timeline-icon {
+            background: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            margin: 30px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: #e91e63;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c2185b;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: #ff9800;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #f57c00;
+            transform: scale(1.05);
+        }
+
+        .btn-success {
+            background: #4caf50;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #388e3c;
+            transform: scale(1.05);
+        }
+
+        .btn-info {
+            background: #00bcd4;
+            color: white;
+        }
+
+        .btn-info:hover {
+            background: #0097a7;
+            transform: scale(1.05);
+        }
+
+        .btn-warning {
+            background: #9c27b0;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: #7b1fa2;
+            transform: scale(1.05);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128c7e;
+            transform: scale(1.05);
+        }
+
+        .btn-call {
+            background: #2196f3;
+            color: white;
+        }
+
+        .btn-call:hover {
+            background: #1976d2;
+            transform: scale(1.05);
+        }
+
+        .highlight-box {
+            background: #fff3cd;
+            border-right: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .highlight-items {
+            display: grid;
+            gap: 10px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .highlight-item::before {
+            content: "✅";
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+
+        /* FAQ Styles */
+        .faq-container {
+            margin: 30px 0;
+        }
+
+        .faq-item {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: #3498db;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px;
+            background: white;
+            border: none;
+            text-align: right;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2c3e50;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question::after {
+            content: "❓";
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 20px;
+        }
+
+        .faq-answer p {
+            color: #555;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 2em;
+            color: #999;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .modal-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .catalog-section,
+        .gallery-section {
+            display: none;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .catalog-section.active,
+        .gallery-section.active {
+            display: block;
+        }
+
+        .back-btn {
+            margin-bottom: 20px;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .package {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 3px solid #3498db;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .package:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(52, 152, 219, 0.3);
+        }
+
+        .package-title {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .package-price {
+            font-size: 2em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .package-features {
+            text-align: right;
+            margin: 20px 0;
+        }
+
+        .package-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 3em;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-container">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/QjZMIKnpAWrxRImf.png" alt="Universal Kitchen Logo">
+            </div>
+            <div class="header-content">
+                <h1>🏠 باكيج الاستشارة والتصميم الأولي</h1>
+                <p>تصميم مطبخ أحلامك بدون التزام</p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content" id="mainContent">
+            <!-- Introduction -->
+            <div class="intro">
+                <h2 style="margin-bottom: 15px;">ما هو الباكيج؟</h2>
+                <p>
+                    نحن نؤمن بأن التصميم الأولي يجب أن يكون متاحاً للجميع. لذلك، نقدم لك <strong>خدمة الاستشارة والتصميم الأولي المجانية بالكامل</strong>
+                    دون أي التزام مالي. هذا هو عرضنا لمساعدتك وتقديم خدمة حقيقية لمجتمعنا.
+                </p>
+            </div>
+
+            <!-- Steps Section -->
+            <div class="section">
+                <h2 class="section-title">الخطوات الثلاث للباكيج</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>القياسات الدقيقة</h3>
+                        <p>نستخدم أجهزة قياس احترافية لأخذ قياسات دقيقة لموقعك، مما يضمن أن التصميم يتناسب مع المساحة بشكل مثالي.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>الاستشارة والنقاش</h3>
+                        <p>نجلس معك لفهم احتياجاتك وتوقعاتك. نحاول معرفة نمط حياتك، وتوقيت استخدامك للمطبخ، وما تفضله في التصميم.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>التصميم 3D</h3>
+                        <p>نرسل لك تصميماً أولياً ثلاثي الأبعاد لمطبخك خلال 24 ساعة، يعكس جميع ما تم الاتفاق عليه في الاستشارة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="section">
+                <button class="faq-question" onclick="toggleFaq(this)" style="width: 100%; margin-bottom: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    🌟 الفوائد الرئيسية
+                </button>
+                <div class="faq-answer benefits">
+                    <div class="benefit">
+                        <strong>✅ مجاني بالكامل</strong>
+                        لا توجد رسوم مخفية
+                    </div>
+                    <div class="benefit">
+                        <strong>✅ بدون التزام</strong>
+                        حق لك أن تقرر الشراء
+                    </div>
+                    <div class="benefit">
+                        <strong>✅ سريع</strong>
+                        التصميم خلال 24 ساعة
+                    </div>
+                    <div class="benefit">
+                        <strong>✅ مخصص</strong>
+                        يناسب احتياجاتك الخاصة
+                    </div>
+                    <div class="benefit">
+                        <strong>✅ متقنة</strong>
+                        فريق ذو خبرة احترافية عالية
+                    </div>
+                    <div class="benefit">
+                        <strong>✅ مرنة</strong>
+                        يمكن تعديل التصميم والإجابة على استفساراتك
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Section -->
+            <div class="section">
+                <button class="faq-question" onclick="toggleFaq(this)" style="width: 100%; margin-bottom: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    ⏰ الجدول الزمني
+                </button>
+                <div class="faq-answer timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">1</div>
+                        <div>
+                            <strong>اليوم - الزيارة الميدانية</strong>
+                            <p>نقوم بالقياسات والاستشارة معك في الموقع (30-45 دقيقة)</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">2</div>
+                        <div>
+                            <strong>خلال 24 ساعة</strong>
+                            <p>نرسل لك التصميم الأولي 3D وتفاصيل القياسات</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">3</div>
+                        <div>
+                            <strong>المتابعة</strong>
+                            <p>نتابع لنا مناقشة التصميم والإجابة على استفساراتك</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>هل أنت مستعد لتصميم مطبخك الجديد؟</h2>
+                <p>احجز الاستشارة المجانية الآن وخذ خطوتك نحو مطبخ أحلامك</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="openBookingModal()">
+                        📅 احجز موعد الاستشارة
+                    </button>
+                    <button class="btn btn-secondary" onclick="openFormModal()">
+                        📝 تعبئة النموذج التفصيلي
+                    </button>
+                    <button class="btn btn-info" onclick="showGallery()">
+                        🖼️ معرض الصور
+                    </button>
+                    <button class="btn btn-success" onclick="showCatalog()">
+                        📋 شاهد الباكيجات والأسعار
+                    </button>
+                    <a href="https://wa.me/962780616401" target="_blank" class="btn btn-whatsapp">
+                        💬 WhatsApp
+                    </a>
+                    <a href="tel:+962780616401" class="btn btn-call">
+                        📞 اتصل بنا
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="section" style="text-align: center; margin-bottom: 20px;">
+                <h2 class="section-title" style="border-bottom: none; padding-bottom: 0; font-size: 2em; color: #e91e63;">
+                    باكيج الخدمة المتكاملة
+                </h2>
+            </div>
+<!-- Highlight Box -->
+            <div class="highlight-box">
+                <h3>🔧 ماذا يشمل الباكيج؟</h3>
+                <div class="highlight-items">
+                    <div class="highlight-item">
+                        <strong>مخطط من دقيق:</strong> يوضح مواقع الخزانات الكهربائية
+                    </div>
+                    <div class="highlight-item">
+                        <strong>تنسيق احترافي:</strong> تنوصل مع سباك لتحديد الموقع الصحيح
+                    </div>
+                    <div class="highlight-item">
+                        <strong>ضمان التوافق:</strong> ضمانات لتوافق الأبواب والأدراج مع أجهزة منزلية
+                    </div>
+                    <div class="highlight-item">
+                        <strong>إرشاد وتنسيق:</strong> إرشاد في كل مرحلة من مراحل التجهيز والتركيب
+                    </div>
+                    <div class="highlight-item">
+                        <strong>حلول التوفير:</strong> نساعدك على تجهيز مطبخك بأفضل طريقة وتوفير الوقت والمال
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="section">
+                <h2 class="section-title">❓ الأسئلة الشائعة</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            هل التصميم الأولي يلزمني بالشراء؟
+                        </button>
+                        <div class="faq-answer">
+                            <p>لا، التصميم الأولي مجاني بالكامل وبدون التزام. إذا أعجبك التصميم، يمكنك المتابعة معنا. وإذا لم يعجبك، فلا توجد مشكلة.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            كم تستغرق الزيارة الميدانية؟
+                        </button>
+                        <div class="faq-answer">
+                            <p>عادة ما تستغرق الزيارة 30-45 دقيقة، حسب حجم المطبخ وتعقيد احتياجاتك. نحن نركز على الجودة وليس السرعة.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            هل يمكن تعديل التصميم الأولي؟
+                        </button>
+                        <div class="faq-answer">
+                            <p>بالتأكيد! التصميم الأولي مجرد نقطة بداية. بعد تلقيك للتصميم، يمكنك طلب تعديلات وتحسينات.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            ماذا بعد التصميم الأولي؟
+                        </button>
+                        <div class="faq-answer">
+                            <p>بعد موافقتك على التصميم، نقدم لك عرض سعر تفصيلي يشمل الخامات والتركيب وخدمات تجهيز الموقع.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            متى يمكنني الاستفادة من الخدمة المتكاملة؟
+                        </button>
+                        <div class="faq-answer">
+                            <p>عند توقيع العقد واستلام الدفعة الأولى مباشرة، ستتمكن من الاستفادة من جميع خدمات الباكيج المتكاملة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Catalog Section -->
+        <div class="catalog-section" id="catalogSection">
+            <button class="btn btn-secondary back-btn" onclick="hideCatalog()">
+                ← العودة إلى الصفحة الرئيسية
+            </button>
+            <h2 class="section-title">📋 الباكيجات والأسعار</h2>
+            <div class="package-grid">
+                <div class="package">
+                    <h3 class="package-title">🥉 الباكيج الأساسي</h3>
+                    <div class="package-price">يبدأ من 1500 دينار</div>
+                    <ul class="package-features">
+                        <li>✅ أدراج إغلاق ذاتي</li>
+                        <li>✅ جرانيت طبيعي</li>
+                        <li>✅ مقابض مخفية</li>
+                        <li>✅ ضمان خمس سنوات</li>
+</ul>
+                    <a href="https://wa.me/962780616401?text=مرحباً، أريد الاستفسار عن الباكيج الأساسي" target="_blank" class="btn btn-whatsapp" style="width: 100%; margin-top: 15px;">
+                        اطلب الآن
+                    </a>
+                </div>
+                <div class="package">
+                    <h3 class="package-title">🥈 الباكيج المتوسط</h3>
+                    <div class="package-price">يبدأ من 2500 دينار</div>
+                    <ul class="package-features">
+                        <li>✅ خزائن بتصميم عصري ووحدات خزين بمساحات متعددة</li>
+                        <li>✅ أدراج مخفية و إغلاق ذاتي</li>
+                        <li>✅ جرانيت طبيعي وكوارتز</li>
+                        <li>✅ إضاءة مخفية وظاهرة</li>
+                        <li>✅ ضمان 5 سنوات</li>
+                        <li>✅ أيادي مخفية بألوان متعددة</li>
+</ul>
+                    <a href="https://wa.me/962780616401?text=مرحباً، أريد الاستفسار عن الباكيج المتوسط" target="_blank" class="btn btn-whatsapp" style="width: 100%; margin-top: 15px;">
+                        اطلب الآن
+                    </a>
+                </div>
+                <div class="package">
+                    <h3 class="package-title">🥇 الباكيج الفاخر</h3>
+                    <div class="package-price">يبدأ من 5000 دينار</div>
+                    <ul class="package-features">
+                        <li>✅ تصميم حسب الطلب</li>
+                        <li>✅ أدراج ذكية</li>
+                        <li>✅ رخام إيطالي فاخر</li>
+                        <li>✅ نظام فتح ذكي</li>
+                        <li>✅ إضاءة ذكية</li>
+                        <li>✅ أجهزة مدمجة</li>
+                        <li>✅ ضمان 5 سنوات</li>
+                    </ul>
+                    <a href="https://wa.me/962780616401?text=مرحباً، أريد الاستفسار عن الباكيج الفاخر" target="_blank" class="btn btn-whatsapp" style="width: 100%; margin-top: 15px;">
+                        اطلب الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="gallery-section" id="gallerySection">
+            <button class="btn btn-secondary back-btn" onclick="hideGallery()">
+                ← العودة إلى الصفحة الرئيسية
+            </button>
+            <h2 class="section-title">🖼️ معرض الصور</h2>
+            <div class="gallery-grid"><div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/GLuQeHaJiBgijqHI.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/GLuQeHaJiBgijqHI.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/WDxZynxfvwZRAJxo.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/WDxZynxfvwZRAJxo.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/HMDVeaAjHAurmlSx.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/HMDVeaAjHAurmlSx.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/gxeHGnTIAtyHGHhM.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/gxeHGnTIAtyHGHhM.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/krhRQtKpYzhyXBqI.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/krhRQtKpYzhyXBqI.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/IARmBqIyMcGEUAkX.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/IARmBqIyMcGEUAkX.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/YMzRpwvrksalqtIi.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/YMzRpwvrksalqtIi.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/ufQXGOTVixdwkJuz.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/ufQXGOTVixdwkJuz.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/IyORqiAvLTrNtywR.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/IyORqiAvLTrNtywR.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/BOvQHozFemPIiEvy.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/BOvQHozFemPIiEvy.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/pNnaGpyZGDaBtYgX.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/pNnaGpyZGDaBtYgX.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/IIeniGHjiIaAWgbY.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/IIeniGHjiIaAWgbY.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/kTZFhGciwbdBtezu.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/kTZFhGciwbdBtezu.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/gOsvphFwrrQfAyWM.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/gOsvphFwrrQfAyWM.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/hKZfykHFQEcoeLvZ.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/hKZfykHFQEcoeLvZ.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/CWzgroUbnXDsVCqA.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/CWzgroUbnXDsVCqA.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/xjGCRwLSNsKMZdzz.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/xjGCRwLSNsKMZdzz.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/snKOhrsCIEJSZIen.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/snKOhrsCIEJSZIen.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/suyQFcFLQuBSxcwE.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/suyQFcFLQuBSxcwE.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/aoAWdlSugRJImnTI.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/aoAWdlSugRJImnTI.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/ELSJkxAgPdwDwcdY.jpeg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/ELSJkxAgPdwDwcdY.jpeg" alt="صورة مطبخ جديدة">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/SHNxJmjlADcFoXKy.jpg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/SHNxJmjlADcFoXKy.jpg" alt="مطبخ 2">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/wGVLTZyQMpbcNgxA.jpg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/wGVLTZyQMpbcNgxA.jpg" alt="مطبخ 3">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/NQwBYlCLqrFdWnfZ.jpg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/NQwBYlCLqrFdWnfZ.jpg" alt="مطبخ 4">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/GyWbdxAjHaYJTKvS.jpg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/GyWbdxAjHaYJTKvS.jpg" alt="مطبخ 5">
+                </div>
+<div class="gallery-item" onclick="openLightbox('https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/MWTlJvxdwOCVzfRY.jpg')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663144288216/MWTlJvxdwOCVzfRY.jpg" alt="مطبخ 6">
+                </div></div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <h3>شركة Universal Kitchen للمطابخ الخشبية</h3>
+            <p>متخصصون في تصميع وتركيب المطابخ الخشبية عالية الجودة</p>
+            <p>
+                📞 <a href="tel:+962780616401">0780616401</a> | 
+                💬 <a href="https://wa.me/962780616401" target="_blank">WhatsApp</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                © 2025 جميع الحقوق محفوظة في محافظات الجنوب وماحولها العقبة ومعان والكرك و محافظة المفرق ومحافظات الشمال وماحولها اربد والرمثا وما حولها
+            </p>
+        </footer>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeBookingModal()">×</span>
+            <h2 class="modal-title">📅 احجز موعد الاستشارة المجانية</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                احجز موعداً مناسباً لك لزيارتنا الميدانية المجانية. سنقوم بالقياسات والاستشارة في الموقع.
+            </p>
+            <form id="bookingForm" onsubmit="submitBooking(event)">
+                <div class="form-group">
+                    <label>الاسم الكامل:</label>
+                    <input type="text" name="name" required placeholder="أدخل اسمك الكامل">
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف:</label>
+                    <input type="tel" name="phone" required placeholder="07XXXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label>المنطقة:</label>
+                    <select name="region" required>
+                        <option value="">اختر المنطقة</option>
+                        <option value="العقبة">العقبة</option>
+                        <option value="معان">معان</option>
+                        <option value="الكرك">الكرك</option>
+                        <option value="المفرق">المفرق</option>
+                        <option value="إربد">إربد</option>
+                        <option value="الرمثا">الرمثا</option>
+                        <option value="أخرى">أخرى</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>العنوان التفصيلي:</label>
+                    <input type="text" name="address" required placeholder="أدخل عنوانك التفصيلي">
+                </div>
+                <div class="form-group">
+                    <label>التاريخ المفضل:</label>
+                    <input type="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label>الوقت المفضل:</label>
+                    <select name="time" required>
+                        <option value="">اختر الوقت</option>
+                        <option value="صباحاً (9:00 - 12:00)">صباحاً (9:00 - 12:00)</option>
+                        <option value="ظهراً (12:00 - 3:00)">ظهراً (12:00 - 3:00)</option>
+                        <option value="عصراً (3:00 - 6:00)">عصراً (3:00 - 6:00)</option>
+                        <option value="مساءً (6:00 - 9:00)">مساءً (6:00 - 9:00)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>نوع الخدمة:</label>
+                    <select name="service" required>
+                        <option value="استشارة وقياس مجانية">استشارة وقياس مجانية</option>
+                        <option value="معاينة مطبخ قائم">معاينة مطبخ قائم</option>
+                        <option value="استشارة تصميم فقط">استشارة تصميم فقط</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>ملاحظات إضافية (اختياري):</label>
+                    <textarea name="notes" placeholder="أي تفاصيل إضافية تود إخبارنا بها..."></textarea>
+                </div>
+                <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <p style="margin: 0; color: #1976d2; font-size: 0.95em;">
+                        <strong>ملاحظة:</strong> سيتم تأكيد الموعد من قبل فريقنا عبر WhatsApp خلال 24 ساعة.
+                    </p>
+                </div>
+                <button type="submit" class="btn btn-warning" style="width: 100%; font-size: 1.1em;">
+                    📅 تأكيد الحجز عبر WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Form Modal -->
+    <div class="modal" id="formModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeFormModal()">×</span>
+            <h2 class="modal-title">📝 النموذج التفصيلي للتصميم</h2>
+            <form id="designForm" onsubmit="submitForm(event)">
+                <!-- بيانات العميل -->
+                <h4 style="color: #3498db; border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 20px;">بيانات العميل</h4>
+                <div class="form-group">
+                    <label>الاسم الكامل:</label>
+                    <input type="text" name="name" required placeholder="أدخل اسمك الكامل">
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف:</label>
+                    <input type="tel" name="phone" required placeholder="07XXXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label>كيف تعرفت علينا:</label>
+                    <select name="how_known" required>
+                        <option value="">اختر</option>
+                        <option value="سوشيال ميديا">سوشيال ميديا</option>
+                        <option value="صديق/قريب">صديق/قريب</option>
+                        <option value="عميل سابق">عميل سابق</option>
+                        <option value="أخرى">أخرى</option>
+                    </select>
+                </div>
+
+                <!-- بيانات العنوان -->
+                <h4 style="color: #3498db; border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 20px;">بيانات العنوان</h4>
+                <div class="form-group">
+                    <label>اسم المنطقة:</label>
+                    <input type="text" name="area" required placeholder="اسم المنطقة">
+                </div>
+                <div class="form-group">
+                    <label>اسم الشارع:</label>
+                    <input type="text" name="street" placeholder="اسم الشارع">
+                </div>
+                <div class="form-group">
+                    <label>نوع السكن:</label>
+                    <select name="residence_type" required>
+                        <option value="">اختر</option>
+                        <option value="شقة">شقة</option>
+                        <option value="منزل منفصل">منزل منفصل</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>ملاحظات العنوان (رقم المبنى، الطابق، إلخ):</label>
+                    <textarea name="address_notes" rows="2" placeholder="رقم المبنى، الطابق، رقم الشقة..."></textarea>
+                </div>
+
+                <!-- تفاصيل التصميم -->
+                <h4 style="color: #3498db; border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 20px;">تفاصيل التصميم</h4>
+                <div class="form-group">
+                    <label>موديل التصميم المفضل:</label>
+                    <select name="design_model" required>
+                        <option value="">اختر الموديل</option>
+                        <option value="كلاسيك">كلاسيك</option>
+                        <option value="مودرن">مودرن</option>
+                        <option value="نيو كلاسيك">نيو كلاسيك</option>
+                        <option value="فرام أيوب">فرام أيوب</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>حجم التصميم:</label>
+                    <select name="design_size" required>
+                        <option value="">اختر الحجم</option>
+                        <option value="بسيط">بسيط (1)</option>
+                        <option value="متوسط">متوسط (2)</option>
+                        <option value="كبير">كبير (3)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>الألوان المفضلة:</label>
+                    <input type="text" name="colors" placeholder="مثال: أبيض، رمادي، بني">
+                </div>
+                <div class="form-group">
+                    <label>نظام الأيادي:</label>
+                    <input type="text" name="handles_system" placeholder="نظام الأيادي (مقابض عادية، مخفية، إلخ)">
+                </div>
+                <div class="form-group">
+                    <label>المطلوب قياسه (مطبخ، خزائن حائط، إلخ):</label>
+                    <textarea name="measurement_scope" rows="2" required placeholder="مطبخ، خزائن حائط، غسيل، سباكة، ديكورات..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>ملاحظات إضافية (قياسات، رسم توضيحي، أجهزة):</label>
+                    <textarea name="extra_notes" rows="3" placeholder="أي ملاحظات حول القياسات، الأجهزة المطلوبة (ثلاجة، فرن، إلخ)، أو أي تفاصيل أخرى..."></textarea>
+                </div>
+<button type="submit" class="btn btn-whatsapp" style="width: 100%; font-size: 1.1em;">
+                    💬 إرسال عبر WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">×</span>
+        <img id="lightboxImage" src="" alt="صورة مكبرة">
+    </div>
+
+    <script>
+        // FAQ Toggle
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Close all FAQs
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                ans.classList.remove('active');
+            });
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+            });
+            
+            // Open clicked FAQ if it wasn't active
+            if (!isActive) {
+                answer.classList.add('active');
+                button.classList.add('active');
+            }
+        }
+
+        // Booking Modal
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+        }
+
+        function submitBooking(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            let message = '🗓️ *حجز موعد استشارة مجانية*%0A';
+            message += '━━━━━━━━━━━━━━━━━━━━%0A%0A';
+            
+            message += '👤 *بيانات العميل:*%0A';
+            message += `• الاسم: ${formData.get('name')}%0A`;
+            message += `• رقم الهاتف: ${formData.get('phone')}%0A`;
+            message += `• المنطقة: ${formData.get('region')}%0A`;
+            message += `• العنوان: ${formData.get('address')}%0A%0A`;
+            
+            message += '📅 *تفاصيل الموعد:*%0A';
+            message += `• التاريخ: ${formData.get('date')}%0A`;
+            message += `• الوقت: ${formData.get('time')}%0A`;
+            message += `• نوع الخدمة: ${formData.get('service')}%0A%0A`;
+            
+            if (formData.get('notes')) {
+                message += '📝 *ملاحظات إضافية:*%0A';
+                message += `${formData.get('notes')}%0A%0A`;
+            }
+            
+            message += '━━━━━━━━━━━━━━━━━━━━%0A';
+            message += '✅ *تم الحجز عبر تطبيق Universal Kitchen*';
+            
+            const whatsappUrl = `https://wa.me/962780616401?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+            
+            closeBookingModal();
+            form.reset();
+        }
+
+        // Form Modal
+        function openFormModal() {
+            document.getElementById('formModal').classList.add('active');
+        }
+
+        function closeFormModal() {
+            document.getElementById('formModal').classList.remove('active');
+        }
+
+        
+        function submitForm(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            let message = '📝 *نموذج استقبال عميل وتصميم مطبخ تفصيلي*%0A';
+            message += '━━━━━━━━━━━━━━━━━━━━%0A%0A';
+            
+            // بيانات العميل
+            message += '👤 *بيانات العميل:*%0A';
+            message += `• الاسم: ${formData.get('name')}%0A`;
+            message += `• الهاتف: ${formData.get('phone')}%0A`;
+            message += `• كيف تعرفت علينا: ${formData.get('how_known')}%0A%0A`;
+            
+            // بيانات العنوان
+            message += '📍 *بيانات العنوان:*%0A';
+            message += `• المنطقة: ${formData.get('area')}%0A`;
+            message += `• الشارع: ${formData.get('street')}%0A`;
+            message += `• نوع السكن: ${formData.get('residence_type')}%0A`;
+            if (formData.get('address_notes')) {
+                message += `• ملاحظات العنوان: ${formData.get('address_notes')}%0A`;
+            }
+            message += '%0A';
+            
+            // تفاصيل التصميم
+            message += '📐 *تفاصيل التصميم:*%0A';
+            message += `• موديل التصميم: ${formData.get('design_model')}%0A`;
+            message += `• حجم التصميم: ${formData.get('design_size')}%0A`;
+            message += `• الألوان المفضلة: ${formData.get('colors')}%0A`;
+            message += `• نظام الأيادي: ${formData.get('handles_system')}%0A`;
+            message += `• المطلوب قياسه: ${formData.get('measurement_scope')}%0A`;
+            if (formData.get('extra_notes')) {
+                message += `• ملاحظات إضافية: ${formData.get('extra_notes')}%0A`;
+            }
+            message += '%0A';
+            
+            message += '━━━━━━━━━━━━━━━━━━━━%0A';
+            message += '✅ *تم الإرسال عبر تطبيق Universal Kitchen*';
+            
+            const whatsappUrl = `https://wa.me/962780616401?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+            
+            closeFormModal();
+            form.reset();
+        }
+
+
+        // Catalog
+        function showCatalog() {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('catalogSection').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function hideCatalog() {
+            document.getElementById('catalogSection').classList.remove('active');
+            document.getElementById('mainContent').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Gallery
+        function showGallery() {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('gallerySection').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function hideGallery() {
+            document.getElementById('gallerySection').classList.remove('active');
+            document.getElementById('mainContent').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Lightbox
+        function openLightbox(imageSrc) {
+            document.getElementById('lightboxImage').src = imageSrc;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const bookingModal = document.getElementById('bookingModal');
+            const formModal = document.getElementById('formModal');
+            
+            if (event.target === bookingModal) {
+                closeBookingModal();
+            }
+            if (event.target === formModal) {
+                closeFormModal();
+            }
+        }
+    </script>
+</body>
+</html>
